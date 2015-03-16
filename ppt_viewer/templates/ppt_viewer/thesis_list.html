@@ -1,0 +1,3 @@
+{% for th in thesis %}
+	<a class="thesis" href="{% url 'presentation' th.pk %}">{{ th.title }}</a></div>
+{% endfor %}

@@ -1,0 +1,17 @@
+{% extends "ppt_viewer/base.html" %}
+
+{% block content %}
+	<div id="slides">
+		<div class="title">{{ thesis.title }}</div>
+		{% for slide in slides %}
+			<input type="radio" name="slides" class="radio" id="{{ slide.num }}">
+			<img class="slide" src="{{ slide.image.url }}">
+			<label for="{{ slide.before }}" class="previousSlide"></label>
+			<label for="{{ slide.after }}" class="nextSlide"></label>
+		{% endfor %}
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript">document.getElementById('slides').children[1].setAttribute('checked', '');</script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "ppt_viewer/base.html" %}
+
+{% block content %}
+	<div id="container">
+		<div class="title pull-left">Секции</div>
+		<div id="sections">
+			{% for section in sections %}
+				<input type="radio" name="sections" id="radio{{ section.id }}">
+				<label class="section" id="{{ section.id }}" for="radio{{ section.id }}">{{ section.title }}</label>
+			{% endfor %}
+		</div>
+	</div>
+	<div id="thesis"></div>
+{% endblock %}
+
+{% block scripts %}
+	{% load staticfiles %}
+	<script src="{% static 'ppt_viewer/js/script.js' %}"></script>
+	<script type="text/javascript">document.getElementById('sections').children[0].setAttribute('checked', '');</script>
+{% endblock %}

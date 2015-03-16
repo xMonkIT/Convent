@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Convent</title>
+	<link rel="shortcut icon" href="{% static 'ppt_viewer/img/favicon.ico' %}" />
+	<link rel="stylesheet" href="{% static 'ppt_viewer/css/style.css' %}">
+</head>
+
+<body>
+	<header><a href="{% url 'home' %}"><img src="{% static 'ppt_viewer/img/header.png' %}"></a></header>
+	{% block content %}{% endblock %}
+	{% block scripts %}{% endblock %}
+</body>
+
+</html>
